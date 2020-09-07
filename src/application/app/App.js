@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import NavigationBar from '../../components/navigation-bar';
+import NavigationBar from '../../components/NavigationBar';
 import { Container, Row, Col } from 'react-bootstrap';
-import JumbotronData from '../../components/jumbotron';
-import Footer from '../../components/footer';
+import JumbotronData from '../../components/Jumbotron';
+import Footer from '../../components/Footer';
 import AddBook from '../../components/AddBook';
 import BookList from '../../components/BookList';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import LoginComponent from '../../components/Login';
 
 function App() {
   const marginTop = {
@@ -23,6 +24,10 @@ function App() {
               <Route path="/" exact component={JumbotronData}/>
               <Route path="/add" exact component={AddBook}/>
               <Route path="/list" exact component={BookList}/>
+              <Route path="/edit/:id" exact component={AddBook}/>
+              <Route path="/login" exact component={LoginComponent}/>
+              <Route path="/logout" exact component={LoginComponent}/>
+              
             </Switch>
           </Col>
         </Row>
